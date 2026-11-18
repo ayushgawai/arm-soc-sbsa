@@ -91,11 +91,11 @@ Measured sanity run on the development laptop (Windows 11, Python 3.12,
 mock mode — honest, scaled-down numbers, not a silicon result):
 
 ```
-$ python -m pytest -q
-19 passed in 0.76s
+$ pytest -q
+19 passed in 0.68s
 
-$ arm-soc-sbsa bench        (via test_cli_tables_and_bench, -s)
-BENCH suite=all checks=112 passed=112 failed=0 skipped=0 wall=0.001s (acs_parse=0.001s)
+$ arm-soc-sbsa bench        (exercised via test_cli_tables_and_bench, -s)
+BENCH suite=all checks=112 passed=112 failed=0 skipped=0 wall=0.002s (acs_parse=0.001s)
 ```
 
 The mock ACS core (boot-log generation + 112 pattern/table assertions) is
