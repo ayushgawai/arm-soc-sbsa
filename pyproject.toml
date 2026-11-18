@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arm-soc-sbsa"
+version = "0.1.0"
+description = "Pre-silicon Arm SoC boot chain, UEFI/ACPI tables, Redfish shim and SBSA/BSA compliance check runner"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Ayush Gawai" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+flask = ["flask>=3"]
+
+[project.scripts]
+arm-soc-sbsa = "arm_soc_sbsa.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["arm_soc_sbsa*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
